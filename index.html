@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--DaisyUi link-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+<!--Tailwind css link-->
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <!--font awesome-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+ <!--css style-->
+ <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a>Home</a></li>
+        <li><a>Shop</a></li>
+        <li><a>Blog</a></li>
+        <li><a>About</a></li>
+        <li><a>Career</a></li>
+        <li><a>FAQ's</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl"> <img style="width:40px; height:40px;" src="./images/logo.jpg!bw700" alt="">
+        <h2>Elegant Essence</h2></a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 header-ul">
+      <li><a>Home</a></li>
+        <li><a>Shop</a></li>
+        <li><a>Blog</a></li>
+        <li><a>About</a></li>
+        <li><a>Career</a></li>
+        <li><a>FAQ's</a></li>
+        <li><a>Contact</a></li>
+  </div>
+  <div class="navbar-end gap-2">
+    <a href=""><i class="fa-regular fa-circle-user"></i></a>
+    <a class="btn"><i class="fa-solid fa-cart-shopping"></i><h4>Buy</h4></a>
+  </div>
+</div>
+<div class="header-div">
+  <h3>Get 15% off on your first order</h3>
+</div>
+
+<section class="header-section p-40">
+<h1 class="header-title">Timeless Fashion for the Modern Wardrobe</h1>
+<p class="lg:text-base sm:text-sm text-white pb-6">Discover timeless fashion for Men, Women, and Kids - crafted for<br>comfort, designed for confidence.</p>
+<button class="header-button bg-red-500 border-0 rounded-r-full rounded-l-full text-white">Explore the collection</button>
+</section>
+    </header>
+    <main>
+      <h3 class="main-header">Shop</h3>
+    
+      <div class="sort-by-latest border-t-2 border-t-gray-500 pt-5">
+         <h4>Showing 1-9 of 12 results</h4>
+      <select name="sort-by-latest" id="sort-latest">
+        <option value="">sort by latest</option>
+        <option value="">sort by popularity</option>
+        <option value="">sort by average rating</option>
+        <option value="">sort by price(low to high)</option>
+        <option value="">Sort by price(high to low)</option>
+      </select>
+      </div>
+
+
+    </main>
+    <footer></footer>
+</body>
+</html>
