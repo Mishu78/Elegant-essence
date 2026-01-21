@@ -56,3 +56,15 @@ border: none;
     border-radius: 10px;
 }
 }
+@media screen and (min-width:576px) and (max-width:991px) {
+     .header-title{
+    font-size:30px;
+    font-weight: 600; 
+    padding-bottom: 15px;
+    }
+    .header-button{
+    font-size: 15px;;
+    padding:10px;
+    border-radius: 10px;
+}
+}
