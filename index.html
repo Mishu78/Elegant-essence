@@ -15,7 +15,7 @@
  <!--css style-->
  <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="lg:w-[1200px] mx-auto">
     <header>
         <div class="navbar bg-base-100 shadow-sm">
   <div class="navbar-start">
@@ -76,7 +76,8 @@
         <option value="">Sort by price(high to low)</option>
       </select>
       </div>-->
-      <section class="mt-10 justify-around justify-self-center">
+      <!--new arrival-->
+      <section class="mt-10 ml-5 mr-5 justify-around justify-self-center">
         <div class="arrival-div items-center">
           <div>
             <h2 class="text-3xl font-extrabold m-10">New Arrivals</h2>
@@ -90,14 +91,14 @@
 
       <div class=" mt-10 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <img class="w-xl"src="./images/Jacket-2-purple.png" alt="">
+          <img class="w-xs"src="./images/Jacket-2-purple.png" alt="">
           <div>
              <h3 class="text-2xl text-black font-medium">Flowline Dresses</h3>
           <h4 class="text-gray-600">Women</h4>
           <h3 class="font-semibold">2000tk-2500tk</h3>
           <div class="gap-5">
-            <button>M</button>
-            <button>L</button>
+            <button class="mr-4">M</button>
+            <button class="mr-4">L</button>
             <button>XL</button>
           </div>
           <div class="flex gap-4">
@@ -110,14 +111,14 @@
          
 
            <div>
-          <img src="./images/polo-tshirt.jpg" alt="">
+          <img class="w-xs" src="./images/polo-tshirt.jpg" alt="">
           <div>
              <h3 class="text-2xl text-black font-medium">Essential Polos</h3>
           <h4 lass="text-gray-600">Men</h4>
           <h3 class="font-semibold">1500tk-2000tk</h3>
           <div class="gap-5">
-            <button>M</button>
-            <button>L</button>
+            <button class="mr-4">M</button>
+            <button class="mr-4">L</button>
             <button>XL</button>
           </div>
           <div class="flex gap-4">
@@ -130,17 +131,16 @@
 
 
            <div>
-          <img class="w-xl"src="./images/cream-tshirt-400x465.jpg" alt="">
-          
-          <button class="text-white bg-red-600 border-none rounded-lg p-2 relative bottom-7/10 left-3">Sale!</button>
-          
+            <div class="relative">
+          <img class="w-xs"src="./images/cream-tshirt-400x465.jpg" alt="">
+          <button class="text-white bg-red-600 border-none rounded-lg p-2 absolute top-3 left-3">Sale!</button></div>
           <div>
              <h3 class="text-2xl text-black font-medium">Cream T-shirt</h3>
           <h4 lass="text-gray-600">Men</h4>
           <h3 class="font-semibold">1400tk-1700tk</h3>
           <div class="gap-5">
-            <button>M</button>
-            <button>L</button>
+            <button class="mr-4">M</button>
+            <button class="mr-4">L</button>
             <button>XL</button>
           </div>
           <div class="flex gap-4">
@@ -153,50 +153,120 @@
       </div>
       </section>
 
-<section class="justify-self-center category-section">
+<section class=" category-section">
   <div class="text-center">
-     <h2 class="text-3xl font-extrabold m-10">Our Categories</h2>
+     <h2 class="text-3xl font-extrabold mt-10 pt-10 pb-5">Our Categories</h2>
   <p class="text-gray-500">Explore a wide range of styles, handpicked to suit every taste and need.</p>
   </div>
- <div class="grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center gap-3">
-  <div class="items-center">
-  <img class="border-2 border-black rounded-4xl" src="./images/category-01.jpg" alt="">
-  <div class=" relative bottom-5 justify-self-center rounded-4xl p-6 border-2 border-black w-1/2 bg-white text-center">
+ <div class="grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center gap-0 ml-52 mr-52 mt-9">
+  <div class="items-center ml-4">
+  <img class="border-2 border-black rounded-4xl w-xs" src="./images/category-01.jpg" alt="">
+  <div class=" relative bottom-5 justify-self-center rounded-4xl p-4 border-2 border-black w-3/4 bg-white text-center">
     <h3 class="font-extrabold">Men's Wear</h3>
     <button class="text-red-500">Shop Now</button>
   </div>
   </div>
 
   <div>
-    <img class="border-2 border-black rounded-4xl" src="./images/category-02.jpg" alt="">
-  <div class="  relative bottom-5 justify-self-center rounded-4xl p-6 border-2 border-black w-1/2 bg-white text-center">
-    <h3 class="font-extrabold">Men's Wear</h3>
+    <img class="border-2 border-black rounded-4xl w-xs" src="./images/category-02.jpg" alt="">
+  <div class="  relative bottom-5 justify-self-center rounded-4xl p-4 border-2 border-black w-3/4 bg-white text-center">
+    <h3 class="font-extrabold">Women's Wear</h3>
     <button  class="text-red-500">Shop Now</button>
   </div>
   </div>
 
   <div>
-    <img class="border-2 border-black rounded-4xl" src="./images/category-03.jpg" alt="">
-  <div class=" relative bottom-5 justify-self-center rounded-4xl p-6 border-2 border-black w-1/2 bg-white text-center">
-    <h3 class="font-extrabold">Men's Wear</h3>
+    <img class="border-2 border-black rounded-4xl w-xs" src="./images/category-03.jpg" alt="">
+  <div class=" relative bottom-5 justify-self-center rounded-4xl p-4 border-2 border-black w-3/4 bg-white text-center">
+    <h3 class="font-extrabold">Kid's Wear</h3>
     <button  class="text-red-500">Shop Now</button>
   </div>
   </div>
 
   <div>
-    <img class="border-2 border-black rounded-4xl" src="./images/category-04.jpg" alt="">
-  <div class="  relative bottom-5 justify-self-center rounded-4xl p-6 border-2 border-black w-1/2 bg-white text-center">
-    <h3 class="font-extrabold">Men's Wear</h3>
+    <img class="border-2 border-black rounded-4xl w-xs" src="./images/category-04.jpg" alt="">
+  <div class="  relative bottom-5 justify-self-center rounded-4xl p-4 border-2 border-black w-3/4 bg-white text-center">
+    <h3 class="font-extrabold">Accessory</h3>
     <button  class="text-red-500">Shop Now</button>
   </div>
   </div>
  </div>
 </section>
 
+
+
+<section class="winter-collection mt-10 pt-8 pb-8 bg-amber-50 ">
+  <div class=" text-center">
+    <h2 class="text-3xl font-extrabold m-10">Classic winter collection</h2>
+    <p class="text-gray-500 pb-4">Our Classic Winter Collection blends timeless elegance <br> with cozy comfort, featuring premium fabrics and refined designs perfect for the season. <br> Stay warm in style with outfits crafted to elevate your winter wardrobe effortlessly.</p>
+  </div>
+  <div class="grid grid-cols-3 justify-items-center justify-self-center gap-4">
+  <div class="card bg-base-100 w-full max-w-xs shadow-sm">
+  <figure class="h-48 flex items-center justify-center">
+    <img class="w-full h-full object-cover"
+      src="./images/winter-dress-1.jpg"
+      alt="Dress" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Women's wool jacket.
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>This is imported product.Made in Malaysia.</p>
+    <p>Price: 2400tk </p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline bg-red-400 font-medium p-3">View Details</div>
+      <div class="badge badge-outline bg-red-400 font-medium p-3">Buy</div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-base-100  w-full max-w-xs shadow-sm">
+  <figure class="h-48 overflow-hidden">
+    <img class="w-[350px]"
+      src="./images/winter-dress-4.jpg"
+      alt="dress" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Korean winter Formal 
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+   <p>This is imported product.Made in Korea.</p>
+    <p>Price: 3000tk </p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline  bg-red-400 font-medium p-3">View details</div>
+      <div class="badge badge-outline  bg-red-400 font-medium p-3">Buy</div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-base-100  w-full max-w-xs shadow-sm">
+  <figure class="h-48 overflow-hidden">
+    <img
+      src="./images/winter-dress-6.jpg"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Women's coat
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+   <p>This is imported product.Made in USA.</p>
+    <p>Price: 3500tk </p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline  bg-red-400 font-medium p-3">View details</div>
+      <div class="badge badge-outline  bg-red-400 font-medium p-3">Buy</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
 <section class="hurry-up-section">
-  <div>
-    <h2 class="text-white text-6xl font-extrabold">Hurry Up! Get Up to 50% Off</h2>
-    <p class="text-white text-2xl font-bold">Step into summer with sun-ready styles at can't-miss prices.</p>
+  <div class="">
+    <h2 class="text-white text-6xl font-extrabold pb-10">Hurry Up! Get Up to 50% Off</h2>
+    <p class="text-white text-2xl font-bold pb-11">Step into summer with sun-ready styles at can't-miss prices.</p>
   </div>
 <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
   <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
@@ -224,8 +294,11 @@
     sec
   </div>
 </div>
+<button class="header-button bg-red-500 border-0 rounded-r-full rounded-l-full text-white mt-7 ">Shop the winter sale</button>
 </section>
     </main>
-    <footer></footer>
+    <footer>
+
+    </footer>
 </body>
 </html>
