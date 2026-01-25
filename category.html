@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 p-5 md:p-10">
+
+    <header class="text-center mb-10" data-aos="fade-down">
+        <h1 id="cat-title" class="text-4xl md:text-5xl font-black mb-2 uppercase text-gray-900">Collection</h1>
+        <p id="cat-desc" class="text-gray-500 mb-6 text-lg max-w-2xl mx-auto"></p>
+        <a href="index.html" class="inline-block bg-white px-6 py-2 rounded-full shadow-sm border font-semibold hover:bg-gray-100 transition">← Back to Home</a>
+    </header>
+
+    <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto pb-20">
+        </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get("type");
+
+        const categoryData = {
+            men: {
+                title: "Men's Collection",
+                desc: "Discover the latest in Men's fashion, from traditional Panjabis to modern formal wear.",
+                products: [
+                    { id: "panjabi", name: "Premium Panjabi", price: "2500tk", img: "./images/punjabi-pic.jpg" },
+                    { id: "lungi", name: "Handloom Lungi", price: "850tk", img: "./images/lungi.jfif" },
+                    { id: "shirt", name: "Formal Shirt", price: "1800tk", img: "./images/shirt.jpg" },
+                    { id: "polo", name: "Polo shirt", price: "4500tk", img: "./images/polo-tshirt.jpg" },
+                    { id: "coat", name: "Men coat", price: "1200tk", img: "./images/men-coat.jfif" },
+                    { id: "t-shirt", name: "T-shirt", price: "2200tk", img: "./images/cream-tshirt-400x465.jpg" },
+                    { id: "shoes", name: "Men shoes", price: "4500tk", img: "./images/men-shoes.jpg" },
+                    { id: "formal", name: "Formal Attire", price: "15000tk", img: "./images/formal-men.jfif" }
+                ]
+            },
+            women: {
+                title: "Women's Collection",
+                desc: "Explore elegant sarees, modern tops, and cozy winter essentials.",
+                products: [
+                    { id: "saree", name: "Silk Saree", price: "5500tk", img: "./images/saree.jpg" },
+                    { id: "kameez", name: "Salwar Kameez", price: "3200tk", img: "./images/three-peice.jfif" },
+                    { id: "jacket", name: "Wool Jacket", price: "2400tk", img: "./images/Jacket-2-purple.png" },
+                    { id: "top", name: "Korean attire", price: "1500tk", img: "./images/korean-wear.jpg" },
+                    { id: "skirt", name: "Women Gown", price: "2000tk", img: "./images/gown.jpg" },
+                    { id: "coat", name: "Winter dress", price: "3500tk", img: "./images/winter-dress-6.jpg" },
+                    { id: "gown", name: "Midi", price: "7500tk", img: "./images/midi.jfif" },
+                    { id: "kurti", name: "Women formal", price: "1800tk", img: "./images/women-formal.jfif" }
+                ]
+            },
+            kids: {
+                title: "Kids' Corner",
+                desc: "Soft fabrics and adorable designs for your little ones.",
+                products: [
+                    { id: "k1", name: "Baby sweater", price: "950tk", img: "./images/baby-sweater.jfif" },
+                    { id: "k2", name: "Kids Frock", price: "1200tk", img: "./images/girl-frock.jfif" },
+                    { id: "k3", name: "Kid leggings", price: "1800tk", img: "./images/kid-leggings.jfif" },
+                    { id: "k4", name: "Kid jeans", price: "700tk", img: "./images/kid-jeans.jpg" },
+                    { id: "k5", name: "Kids gown", price: "1300tk", img: "./images/kid-gown.jfif" },
+                    { id: "k6", name: "girl Midi", price: "1500tk", img: "./images/midi.jfif" },
+                    { id: "k7", name: "Girls frock", price: "600tk", img: "./images/kid-frock.jfif" },
+                    { id: "k8", name: "Night Suit", price: "1100tk", img: "./images/kid-nightsuit.jfif" }
+                ]
+            },
+            accessories: {
+                title: "Accessories",
+                desc: "The perfect finishing touches for every outfit.",
+                products: [
+                    { id: "a1", name: "Leather Watch", price: "3500tk", img: "./images/watch.jpg" },
+                    { id: "a2", name: "Pure Leather Belt", price: "1200tk", img: "./images/belt.jfif" },
+                    { id: "a3", name: "Handbag", price: "2800tk", img: "./images/bag.jfif" },
+                    { id: "a4", name: "Sunglasses", price: "1500tk", img: "./images/sunglasses.jfif" },
+                    { id: "a5", name: "Woolen Scarf", price: "800tk", img: "./images/scaarf.jfif" },
+                    { id: "a6", name: "Silver Necklace", price: "4500tk", img: "./images/necklace.jfif" },
+                    { id: "a7", name: "Wallet", price: "1000tk", img: "./images/wallet.jfif" },
+                    { id: "a8", name: "Winter Cap", price: "500tk", img: "./images/cap.jfif" }
+                ]
+            }
+        };
+
+        const currentCat = categoryData[type];
+
+        if (currentCat) {
+            document.getElementById("cat-title").innerText = currentCat.title;
+            document.getElementById("cat-desc").innerText = currentCat.desc;
+            document.title = currentCat.title + " | StyleDrop";
+
+            const container = document.getElementById("product-container");
+            currentCat.products.forEach((p, index) => {
+                container.innerHTML += `
+                    <a href="product-details.html?item=${p.id}" class="group bg-white rounded-2xl shadow-sm border hover:shadow-xl transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="${(index % 4) * 100}">
+                        <div class="h-72 overflow-hidden bg-gray-200">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800">${p.name}</h3>
+                            <p class="text-red-500 font-black mt-1">${p.price}</p>
+                            <div class="mt-4 py-2 border-t text-center text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors">
+                                View Product Details →
+                            </div>
+                        </div>
+                    </a>
+                `;
+            });
+            AOS.init({ duration: 800, once: true });
+        } else {
+            document.body.innerHTML = "<div class='text-center mt-20'><h1 class='text-4xl font-bold'>Category Not Found</h1><a href='index.html' class='text-blue-500 underline'>Return Home</a></div>";
+        }
+    </script>
+</body>
+</html>
