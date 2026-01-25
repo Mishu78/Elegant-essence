@@ -20,9 +20,15 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
+ AOS.init({
     duration: 1000,
-    once: false, // Allows animation to repeat when scrolling up/down
+    once: false,
+    offset: 50,           
+    delay: 0, 
+    easing: 'ease-in-out',
+    mirror: true,         
+    disable: false,       
+    startEvent: 'DOMContentLoaded' 
   });
 </script>
 </head>
@@ -163,7 +169,7 @@
 </section>
 
 
-<section class="winter-collection mt-10 pt-8 pb-8 bg-amber-50">
+<section class="winter-collection mt-10 pt-8 pb-8 bg-amber-50 overflow-x-hidden">
   <div class="text-center px-4" data-aos="zoom-in">
     <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold m-10">
       Classic winter collection
