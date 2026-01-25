@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100 p-10">
+
+  <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <a href="index.html" class="text-blue-500 font-semibold">← Back to Shop</a>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+
+      <!-- PRODUCT IMAGE -->
+      <div>
+        <img id="p-image" src="" alt="Product Image" class="rounded-lg w-full">
+      </div>
+
+      <!-- PRODUCT DETAILS -->
+      <div>
+        <h1 id="p-title" class="text-4xl font-bold mb-2"></h1>
+        <p id="p-price" class="text-2xl text-red-500 font-semibold mb-4"></p>
+        <p id="p-desc" class="text-gray-600 mb-4"></p>
+
+        <ul class="space-y-2 text-gray-700 mb-6">
+          <li><strong>Material:</strong> <span id="p-material"></span></li>
+          <li><strong>Available Sizes:</strong> <span id="p-sizes"></span></li>
+          <li><strong>Colors:</strong> <span id="p-colors"></span></li>
+          <li><strong>Fit:</strong> <span id="p-fit"></span></li>
+          <li><strong>Season:</strong> <span id="p-season"></span></li>
+          <li><strong>Origin:</strong> <span id="p-origin"></span></li>
+          <li><strong>Care:</strong> <span id="p-care"></span></li>
+          <li><strong>Delivery:</strong> <span id="p-delivery"></span></li>
+          <li><strong>Return Policy:</strong> <span id="p-return"></span></li>
+        </ul>
+
+        <button class="bg-red-500 text-white px-8 py-3 rounded-full font-bold hover:bg-red-600">
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const item = params.get("item");
+
+    const products = {
+      jacket: {
+        title: "Women's Wool Jacket",
+        price: "2400tk",
+        desc: "Premium wool jacket imported from Malaysia. Designed for warmth and elegance during winter evenings.",
+        img: "./images/winter-dress-1.jpg",
+        material: "100% Premium Wool (Soft inner lining)",
+        colorOptions: ["Brown", "Dark Gray", "Black"],
+        availableSizes: ["S", "M", "L", "XL"],
+        fit: "Regular fit",
+        season: "Winter",
+        origin: "Made in Malaysia",
+        care: "Dry clean only",
+        delivery: "3–5 working days",
+        returnPolicy: "7 days easy return"
+      },
+
+      "korean-formal": {
+        title: "Korean Winter Formal",
+        price: "3000tk",
+        desc: "Elegant Korean-style winter formal wear with a modern slim fit. Perfect for office and events.",
+        img: "./images/winter-dress-4.jpg",
+        material: "Wool & Polyester blend",
+        colorOptions: ["Charcoal", "Navy Blue"],
+        availableSizes: ["M", "L", "XL"],
+        fit: "Slim fit",
+        season: "Winter",
+        origin: "Made in Korea",
+        care: "Hand wash or dry clean",
+        delivery: "3–4 working days",
+        returnPolicy: "7 days exchange"
+      },
+
+      coat: {
+        title: "Women's Coat",
+        price: "3500tk",
+        desc: "Stylish long winter coat with luxury lining for premium warmth and comfort.",
+        img: "./images/winter-dress-6.jpg",
+        material: "Wool blend with luxury lining",
+        colorOptions: ["Beige", "Camel", "Black"],
+        availableSizes: ["S", "M", "L"],
+        fit: "Relaxed fit",
+        season: "Winter",
+        origin: "Made in USA",
+        care: "Dry clean recommended",
+        delivery: "4–6 working days",
+        returnPolicy: "7 days return & exchange"
+      }
+    };
+
+    if (!item || !products[item]) {
+      document.body.innerHTML = `
+        <div class="text-center mt-20">
+          <h2 class="text-3xl font-bold text-red-500">Product not found</h2>
+          <a href="index.html" class="text-blue-500 mt-4 inline-block">← Back to Shop</a>
+        </div>
+      `;
+    } else {
+      const p = products[item];
+
+      document.getElementById("p-title").innerText = p.title;
+      document.getElementById("p-price").innerText = "Price: " + p.price;
+      document.getElementById("p-desc").innerText = p.desc;
+      document.getElementById("p-image").src = p.img;
+
+      document.getElementById("p-material").innerText = p.material;
+      document.getElementById("p-sizes").innerText = p.availableSizes.join(", ");
+      document.getElementById("p-colors").innerText = p.colorOptions.join(", ");
+      document.getElementById("p-fit").innerText = p.fit;
+      document.getElementById("p-season").innerText = p.season;
+      document.getElementById("p-origin").innerText = p.origin;
+      document.getElementById("p-care").innerText = p.care;
+      document.getElementById("p-delivery").innerText = p.delivery;
+      document.getElementById("p-return").innerText = p.returnPolicy;
+    }
+  </script>
+
+</body>
+</html>
