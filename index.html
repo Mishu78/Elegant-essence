@@ -67,7 +67,10 @@
   </div>
   <div class="navbar-end gap-2">
     <a href=""><i class="fa-regular fa-circle-user"></i></a>
-    <a class="btn"><i class="fa-solid fa-cart-shopping"></i><h4>Buy</h4></a>
+    <a class="btn add-to-cart" data-id="101" data-name="Cool Gadget">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <h4>Buy</h4>
+</a>
   </div>
 </div>
 <div class="header-div">
@@ -261,34 +264,34 @@
   </div>
 
   <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
-    <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2" data-aos="flip-down" data-aos-delay="100">
-      <span class="countdown font-mono text-5xl">
-        <span style="--value:15;" aria-live="polite" aria-label="15">15</span>
-      </span>
-      days
-    </div>
-
-    <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2" data-aos="flip-down" data-aos-delay="200">
-      <span class="countdown font-mono text-5xl">
-        <span style="--value:10;" aria-live="polite" aria-label="10">10</span>
-      </span>
-      hours
-    </div>
-
-    <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2" data-aos="flip-down" data-aos-delay="300">
-      <span class="countdown font-mono text-5xl">
-        <span style="--value:24;" aria-live="polite" aria-label="24">24</span>
-      </span>
-      min
-    </div>
-
-    <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2" data-aos="flip-down" data-aos-delay="400">
-      <span class="countdown font-mono text-5xl">
-        <span style="--value:59;" aria-live="polite" aria-label="59">59</span>
-      </span>
-      sec
-    </div>
+  <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+    <span class="countdown font-mono text-5xl">
+      <span id="days" style="--value:0;"></span>
+    </span>
+    days
   </div>
+
+  <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+    <span class="countdown font-mono text-5xl">
+      <span id="hours" style="--value:0;"></span>
+    </span>
+    hours
+  </div>
+
+  <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+    <span class="countdown font-mono text-5xl">
+      <span id="minutes" style="--value:0;"></span>
+    </span>
+    min
+  </div>
+
+  <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+    <span class="countdown font-mono text-5xl">
+      <span id="seconds" style="--value:0;"></span>
+    </span>
+    sec
+  </div>
+</div>
 
   <button class="header-button bg-red-500 border-0 rounded-r-full rounded-l-full text-white mt-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     Shop the winter sale
@@ -411,6 +414,64 @@
     duration: 1000,
     once: false,
   });
+</script>
+<script>
+
+  const cartButtons = document.querySelectorAll('.add-to-cart');
+
+cartButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Use e.currentTarget to ensure we get the <a> tag's data
+    const btn = e.currentTarget; 
+    const productId = btn.getAttribute('data-id');
+    const productName = btn.getAttribute('data-name');
+
+    // Now call the function
+    addToCart(productId, productName);
+  });
+});
+
+function addToCart(id, name) {
+  // If id or name are null, the popup will look empty
+  if(!id || !name) {
+    console.error("Data missing! Check your HTML attributes.");
+    return;
+  }
+  alert("Added to cart: " + name + " (ID: " + id + ")");
+}
+</script>
+
+<script>
+  // 1. Set the date we're counting down to
+const targetDate = new Date("february 20, 2026 23:59:59").getTime();
+
+const timer = setInterval(function() {
+  // 2. Get today's date and time
+  const now = new Date().getTime();
+
+  // 3. Find the distance between now and the target date
+  const distance = targetDate - now;
+
+  // 4. Time calculations for days, hours, minutes and seconds
+  const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // 5. Update the CSS variables (--value)
+  document.getElementById("days").style.setProperty('--value', d);
+  document.getElementById("hours").style.setProperty('--value', h);
+  document.getElementById("minutes").style.setProperty('--value', m);
+  document.getElementById("seconds").style.setProperty('--value', s);
+
+  // 6. If the countdown is finished, clear the interval
+  if (distance < 0) {
+    clearInterval(timer);
+    // Optional: add "EXPIRED" logic here
+  }
+}, 1000);
 </script>
 </body>
 </html>
